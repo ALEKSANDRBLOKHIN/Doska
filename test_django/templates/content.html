@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ad</title>
+</head>
+<body>
+{% if user %}
+    <form method="post">
+        {% csrf_token %}
+        <label>
+            <input type="text" name="title" placeholder="Ваш заголовок">
+        </label>
+        <label>
+            <input type="text" name="text" placeholder="Ваш текст">
+        </label>
+
+            <br>
+            {% for cat in сategories %}
+                <label>
+                    {{ cat }}
+                    <input type="radio" name="category" value="{{ cat.id }}">
+                    <br>
+                </label>
+            {% endfor %}
+
+            <label>
+                <input type="submit">
+            </label>
+
+    </form>
+{% else %}
+    <h1>Чтобы оставить объявление авторизуйтесь</h1>
+{% endif %}
+</body>
+</html>

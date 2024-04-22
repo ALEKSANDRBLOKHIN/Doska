@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <header>
+    </header>
+
+    <h1>This is home page</h1>
+    <a href="{% url 'register' %}">Регистрация</a><br>
+    <a href="{% url 'login' %}">Авторизация</a><br>
+    <a href="{% url 'create_ad' %}">Создать объявление</a><br>
+    <a href="{% url 'ads' %}">Просмотр объявлений</a><br><br>
+    <a href="{% url 'user' %}">Отклики на мои объявления</a><br>
+    <a href="{% url 'log_out' %}">Exit</a>
+</body>
+</html>

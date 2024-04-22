@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ADS</title>
+</head>
+<body>
+    <h1>Объявления</h1>
+    {% for ad in ads %}
+        <p>
+            <b>{{ ad.title }}</b><br>
+            ~~{{ ad.text }}<br>
+            {{ ad.cat }}<br>
+            <form method="post">
+                {% csrf_token %}
+                <input type="hidden" name="ad_id" value="{{ad.id}}">
+                <textarea name="text"></textarea>
+                <button type="submit">Откликнуться</button>
+            </form>
+        </p>
+    {% endfor %}
+</body>
+</html>

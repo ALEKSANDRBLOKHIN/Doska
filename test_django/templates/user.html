@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+    <h1>Отклики</h1>
+    {% for rep in replies %}
+        <p>
+            {{ rep.text }}<br>
+            <form method="post">
+                {% csrf_token %}
+                <input type="hidden" name="ad_id" value="{{rep.ads_id}}">
+                <input type="hidden" name="rep_id" value="{{rep.id}}">
+                <button value="ok" type="submit" name="action">Принять</button>
+                <button value="delete" type="submit" name="action">Удалить</button>
+            </form>
+        </p>
+    {% endfor %}
+</body>
+</html>

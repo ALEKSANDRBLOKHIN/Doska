@@ -1,1 +1,1 @@
-Django project. A new website has been implemented.
+Django project. A notice board website has been implemented.
